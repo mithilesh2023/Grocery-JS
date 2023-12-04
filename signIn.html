@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+
+    <!--link -->
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head> 
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Sign In</h2>
+            <form action="">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" style="text-transform: initial;" class="user" id="email" placeholder="enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password"  style="text-transform: initial; class="user" id="password" placeholder="enter your password">
+                </div>
+                <div class="form-group">
+                    <button type="reset">Reset</button>
+                    <button type="button" id="save-btn" onclick="saveData()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function saveData(){
+            let email,password;
+            email=document.getElementById("email").value;
+            password=document.getElementById("password").value;
+
+            // console.log(name+email+number+password)
+
+            let user_records=new Array();
+            user_records=JSON.parse(localStorage.getItem("users"))? JSON.parse(localStorage.getItem("users")):[]
+
+            if(user_records.some((e)=>{
+                return e.email ==email && e.password==password
+            })){
+                console.log("Login successful")
+                alert("Login successful")
+                let current_user=user_records.filter((e)=>{
+                    return e.email==email && e.password==password
+                })[0]
+                localStorage.setItem("name",current_user.name)
+                localStorage.setItem("email",current_user.email)
+                window.location.href="index.html";
+            }else{
+                alert("Login Fail")
+            }
+        }
+    </script>
+</body>
+</html>
