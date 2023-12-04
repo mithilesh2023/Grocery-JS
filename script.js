@@ -11,3 +11,13 @@ window.onscroll = () => {
     menu.classList.remove('fa-times')
     navbar.classList.remove('active');
 }
+
+let abc = localStorage.getItem("code")
+if (abc == "secret") {
+   
+}
+else {
+    window.location.href = "signIn.html";
+}
+
+

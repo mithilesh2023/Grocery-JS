@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+
+  <!--link -->
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+  
+  <div class="login">
+    <h2>Login Page</h2>
+    <div class="user-login">
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="user-login">
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+    </div>
+    <button class="login-btn" onclick="login()">Submit</button>
+    <p>if you are not signUp please <a href="/signUp.html">singUp</a></p>
+  </div>
+
+  <script>
+
+    function login() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById("password").value;
+
+      var user_email = localStorage.getItem("email")
+      var user_password = localStorage.getItem("password")
+
+
+      if (user_email == email && user_password == password) {
+
+        localStorage.setItem("code", "secret");  // code is key and secret is value
+        window.location.href = "index.html";
+
+      } else {
+        alert("incorrect login....")
+      }
+    }
+
+  </script>
+</body>
+
+</html>

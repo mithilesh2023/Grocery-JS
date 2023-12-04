@@ -753,6 +753,59 @@ flex: 1 1 25rem;
         padding-top: 2rem;
     }
 
+    /*-------------------- login section start------------------------ */
+        .login{
+            width: 30%;
+            border: 1px solid gray;
+            border-radius: .5rem;
+           position: absolute;
+           top: 20%;
+           background: var(--teal);
+           left: 35%;
+        }
+        .signup{
+            margin-top:-10rem;
+        }
+        .login h2{
+                text-align: center;
+                font-size: 3rem;
+                margin-top: .5rem;
+                color: var(--red);
+        }
+
+        .login .user-login{
+                padding: 1.4rem;
+                margin-inline: 1rem;
+                margin-bottom: .8rem;
+        }
+       
+        .login .user-login input{
+            font-size: 2rem;
+            width: 100%;
+            padding: 1rem;
+            text-transform: initial;
+        }
+        .login .login-btn{
+            width: 87%;
+            padding: 1rem;
+            font-size: 2rem;
+            background: var(--orange);
+            border-radius: .3rem;
+            margin-left: 2.5rem;
+            margin-bottom: .5rem;
+
+        }
+        .login p{
+            font-size: 1.3rem;
+            color: #000;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .login p a{
+            color: var(--primary);
+        }
+    /*-------------------- login section end------------------------ */
+
     
 
 
