@@ -36,11 +36,26 @@
 
     <script>
         function signup(){
-            let fname=document.getElementById("fname").value;
-            let lname=document.getElementById("lname").value;
-            let email=document.getElementById("email").value;
-            let number=document.getElementById("number").value;
-            let password=document.getElementById("password").value;
+
+          let fname=document.getElementById("fname").value;
+          let lname=document.getElementById("lname").value;
+          let email=document.getElementById("email").value;
+          let number=document.getElementById("number").value;
+          let password=document.getElementById("password").value;
+
+          if(fname===""){
+            alert("please enter first name")
+          }else if(lname ===""){
+            alert("please enter last name ")
+          }else if(number ===""){
+            alert("please enter number ")
+          }else if(email ===""){
+            alert("please enter email ")
+          }else if(password ===""){
+            alert("please enter password ")
+          }else{
+            alert("signup registration successful ...")
+          }
 
             localStorage.setItem("fname",fname)
             localStorage.setItem("lname",lname)
@@ -54,7 +69,6 @@
             document.getElementById("number").value="";
             document.getElementById("password").value="";
 
-            alert("signup registration successful ...")
         }
     </script>
 </body>

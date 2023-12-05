@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  
+
   <div class="login">
     <h2>Login Page</h2>
     <div class="user-login">
@@ -30,11 +30,24 @@
   <script>
 
     function login() {
+
       var email = document.getElementById('email').value;
       var password = document.getElementById("password").value;
 
       var user_email = localStorage.getItem("email")
       var user_password = localStorage.getItem("password")
+
+      if (email == "") {
+        alert("please fill the email first")
+      }else if (email !== user_email) {
+        alert("email doesn't exist")
+      }else if (password == "") {
+        alert("please fill the password first")
+      }  else if (password !== user_password) {
+        alert("password not matched")
+      }  else {
+        alert("login successfull...")
+      }
 
 
       if (user_email == email && user_password == password) {
@@ -43,7 +56,7 @@
         window.location.href = "index.html";
 
       } else {
-        alert("incorrect login....")
+        // alert("incorrect login....")
       }
     }
 
