@@ -17,7 +17,20 @@ if (abc == "secret") {
    
 }
 else {
-    window.location.href = "signIn.html";
+    window.location.href = "login.html";
 }
+
+const isLoggedIn = localStorage.getItem("fname");
+         
+document.addEventListener("DOMContentLoaded", function () {
+   const loginButton = document.getElementById("userLogIn");
+   const signUpButton = document.getElementById("userSignUp");
+
+   if (isLoggedIn) {
+      // User is logged in, hide login and sign-up buttons, show logout button
+      loginButton.style.display = "none";
+      signUpButton.style.display = "none";
+   } 
+});
 
 
