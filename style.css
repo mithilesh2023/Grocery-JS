@@ -141,7 +141,10 @@ section {
     color: var(--orange);
     margin-right: .5rem;
 }
-
+.header-2 .icons span{
+    font-size: 2rem;
+    margin-inline: .5rem;
+}
 .header-2 .icons a:hover {
     color: var(--red);
 }

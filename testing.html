@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container container-header">
+            <div class="header-left">
+                <div class="logo">Logo</div>
+            </div>
+            <div class="header-right">
+                <div class="header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+        </div>
+        fdf
+    </header>
+    <main>
+        <div class="container container-main">
+            <!-- ------------------list of product------------- -->
+            <div class="product-container" id="product-list">
+
+            </div>
+            <!-- <div class="product-card">
+                <div class="product-img">
+                    <img src="/" alt="">
+                </div>
+                <div class="product-description">
+                    <div class="product-category">
+                            men's clothing
+                    </div>
+                    <p>$15</p>
+                    <div class="icons">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <script>
+        // product list container
+        let productListHTML="";
+        let productList = document.getElementById("product-list")
+        
+        async function fetchData(){
+            const res=await fetch("/database/productData.json")
+            const data=await res.json()
+
+           await data.forEach(element=>{
+                // console.log(element)
+                productListHTML +=`
+                    <div class="product-card">
+                <div class="product-img">
+                    <img src="${element.image}" style="width:10%" alt=""/>
+                </div>
+                <div class="product-description">
+                    <div class="product-category">
+                            ${element.category}
+                    </div>
+                    <p>${element.price}</p>
+                    <div class="icons">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+                `
+            })
+            productList.innerHTML= productListHTML
+            // console.log(productListHTML) 
+        }
+
+
+        fetchData()
+    </script>
+</body>
+</html>
